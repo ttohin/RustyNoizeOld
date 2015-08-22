@@ -1,0 +1,10 @@
+*~
+*.DS_Store
+proj.ios_mac/Build
+cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata
+proj.ios_mac/rust.xcodeproj/project.xcworkspace
+proj.ios_mac/rust.xcodeproj/xcuserdata
+proj.ios_mac/cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata
+*.zip
+cocos2d/external
+cocos2d/tools
