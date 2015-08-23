@@ -192,7 +192,7 @@ void PartialMapScene::CreateGenerator()
   
   m_frameNumber = 0;
   m_noizeMode = NoizeMode(std::rand() % NoizeModeNumber);
-  m_noizeLevel = 1.2 * std::rand() / (float)RAND_MAX;
+  m_noizeLevel = 1.5 * std::rand() / (float)RAND_MAX;
   
   const int w = kSize;
   const int h = kSize;
