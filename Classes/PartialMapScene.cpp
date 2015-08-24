@@ -60,7 +60,7 @@ bool PartialMapScene::init()
   m_imageBuffer = std::shared_ptr<unsigned char>(new unsigned char[w * h * 4]);
   CreateGenerator();
   
-  m_image = new Image::Image();
+  m_image = new Image();
   m_image->initWithRawData(m_imageBuffer.get(), w * h * 4, w, h, 8);
   m_image->autorelease();
   
@@ -71,7 +71,7 @@ bool PartialMapScene::init()
   m_debugView = Sprite::createWithTexture(m_texture);
   //  m_debugView->setAnchorPoint({0, 0});
   Size viewSize = Director::getInstance()->getVisibleSize();
-  m_debugView->setScale(AspectToFill({kSize, kSize}, viewSize));
+  m_debugView->setScale(AspectToFill(Size(kSize, kSize), viewSize));
   m_debugView->setPosition({viewSize.width/2.f, viewSize.height/2.f});
   
   addChild(m_debugView);
@@ -380,7 +380,7 @@ void PartialMapScene::visit(cocos2d::Renderer *renderer, const cocos2d::Mat4 &pa
     // before we visit we are going to set our size to the visible size.
     setContentSize(Director::getInstance()->getVisibleSize());
     
-    m_debugView->setScale(AspectToFill({kSize, kSize}, viewSize));
+    m_debugView->setScale(AspectToFill(Size(kSize, kSize), viewSize));
     m_debugView->setPosition({viewSize.width/2.f, viewSize.height/2.f});
     CacheMapSize();
   }
@@ -401,7 +401,7 @@ void PartialMapScene::timerForUpdate(float dt)
   m_generator->ForEach(std::bind(&PartialMapScene::ForEach, this, dt, _1, _2, _3));
   
   m_texture = new Texture2D();
-  m_texture->initWithData(m_imageBuffer.get(), w * h * 4, Texture2D::PixelFormat::RGBA8888, kSize, kSize, {kSize, kSize});
+  m_texture->initWithData(m_imageBuffer.get(), w * h * 4, Texture2D::PixelFormat::RGBA8888, kSize, kSize, Size(kSize, kSize));
   m_texture->autorelease();
   
   m_debugView->setTexture(m_texture);

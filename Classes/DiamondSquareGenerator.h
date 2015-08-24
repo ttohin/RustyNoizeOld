@@ -10,6 +10,7 @@
 #define __prsv__DiamondSquareGenerator__
 
 #include <vector>
+#include <functional>
 
 namespace komorki
 {
