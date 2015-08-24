@@ -7,6 +7,7 @@
 //
 
 #include "DiamondSquareGenerator.h"
+#include <algorithm>
 
 using namespace komorki;
 
