@@ -32,28 +32,27 @@ bool PartialMapScene::init()
   if ( !Layer::init() )
   {
     return false;
-  }
+  } 
   
   const int w = kSize;
   const int h = kSize;
   
   auto s = Director::getInstance()->getWinSize();
   
-  m_menu = LabelTTF::create("Press left and right mouse buttons to change the world.\n"
-                                 "Keys:\n"
-                                 "R - restart\n"
-                                 "H - help\n"
-                                 "Q - exit\n\n"
-                                 "ttohin (2015)\n"
-                                 "thanks to hintertur for colors."
-                                 ,
-                                 "Marker Felt",
-                                 32,
-                                 s,
-                                 TextHAlignment::LEFT,
-                                 TextVAlignment::BOTTOM);
+  m_menu = Node::create();
   
-  m_menu->setPosition(Vec2(10 + s.width / 2, s.height / 2));
+  int lineIndex = 0;
+  float lineSize = -26.f;
+  m_menu->addChild(CreateLabel("Keys:", {0.0f, lineSize * lineIndex++}));
+  m_menu->addChild(CreateLabel("R - restart", {0.0f, lineSize * lineIndex++}));
+  m_menu->addChild(CreateLabel("H - help", {0.0f, lineSize * lineIndex++}));
+  m_menu->addChild(CreateLabel("Q - exit", {0.0f, lineSize * lineIndex++}));
+  m_menu->addChild(CreateLabel("Press left and right mouse buttons to change the world.", {0.0f, lineSize * lineIndex++}));
+  lineIndex++;
+  m_menu->addChild(CreateLabel("ttohin (2015)", {0.0f, lineSize * lineIndex++}));
+  m_menu->addChild(CreateLabel("Thanks to hintertur for colors.", {0.0f, lineSize * lineIndex++}));
+  
+  m_menu->setPosition(Vec2(10, s.height / 2));
   
   addChild(m_menu, 999);
   ShowMenu();
@@ -143,8 +142,6 @@ bool PartialMapScene::init()
     }
   };
   mouseListener->onMouseDown = [this](Event* event) {
-    
-    HideMenu();
     
     auto me = static_cast<EventMouse*>(event);
     
@@ -356,7 +353,7 @@ void PartialMapScene::ShowMenu()
   schedule([&](float dt)
            {
              HideMenu();
-           }, 10, "hide");
+           }, 15, "hide");
 }
 
 void PartialMapScene::HideMenu()
@@ -423,5 +420,12 @@ float PartialMapScene::AspectToFill(const Size& source, const Size& target)
   float wAspect = target.width/source.width;
   float hAspect = target.height/source.height;
   return MAX(wAspect, hAspect);
+}
+
+cocos2d::LabelAtlas* PartialMapScene::CreateLabel(const char* text, const cocos2d::Vec2& offset) const
+{
+  auto result = LabelAtlas::create(text, "font.png", 18, 24, 0);
+  result->setPosition(offset);
+  return result;
 }
 

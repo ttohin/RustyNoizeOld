@@ -83,6 +83,8 @@ private:
   float AspectToFill(const cocos2d::Size& source, const cocos2d::Size& target);
   float AspectToFit(const cocos2d::Size& source, const cocos2d::Size& target);
   
+  cocos2d::LabelAtlas* CreateLabel(const char* text, const cocos2d::Vec2& offset) const;
+  
   std::vector<cocos2d::Touch*> zoomToches;
   
   void visit(cocos2d::Renderer *renderer, const cocos2d::Mat4 &parentTransform, uint32_t parentFlags);

@@ -22,6 +22,7 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		8F48DE701AB676B50075D222 /* PartialMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F48DE611AB676B50075D222 /* PartialMapScene.cpp */; };
 		8F48DE7D1AB7797B0075D222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F48DE7C1AB7797B0075D222 /* Images.xcassets */; };
+		8FA859311B8CD88E00913806 /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA859301B8CD88E00913806 /* font.png */; };
 		8FAB25241B80FBDA00F2C0E4 /* DiamondSquareGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FAB25211B80FBDA00F2C0E4 /* DiamondSquareGenerator.cpp */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		8F48DE611AB676B50075D222 /* PartialMapScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartialMapScene.cpp; sourceTree = "<group>"; };
 		8F48DE621AB676B50075D222 /* PartialMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartialMapScene.h; sourceTree = "<group>"; };
 		8F48DE7C1AB7797B0075D222 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "prsv Mac/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		8FA859301B8CD88E00913806 /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
 		8FAB25211B80FBDA00F2C0E4 /* DiamondSquareGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DiamondSquareGenerator.cpp; sourceTree = "<group>"; };
 		8FAB25221B80FBDA00F2C0E4 /* DiamondSquareGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiamondSquareGenerator.h; sourceTree = "<group>"; };
 		8FAFB1201ABE33550006A0E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ios/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -182,6 +184,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8FA859301B8CD88E00913806 /* font.png */,
 				8F48DE7C1AB7797B0075D222 /* Images.xcassets */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 			);
@@ -299,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA859311B8CD88E00913806 /* font.png in Resources */,
 				8F48DE7D1AB7797B0075D222 /* Images.xcassets in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 			);
